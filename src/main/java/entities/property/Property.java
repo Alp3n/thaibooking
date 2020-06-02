@@ -1,45 +1,27 @@
 package entities.property;
 
-import entities.propertyFacility.PropertyFacility;
-import entities.propertyType.PropertyType;
+import entities.user.Partner;
 import entities.room.Room;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "Property")
 public class Property {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "pId")
     private Integer id;
-    @Column(name = "pName")
     private String name;
-    @Column(name = "pDescription")
     private String description;
-    @Column(name = "pRoad")
     private String road;
-    @Column(name = "pDistrict")
     private String district;
-    @Column(name = "pCity")
     private String city;
-    @Column(name = "pZipCode")
     private String zipCode;
-    @Column(name = "pCountry")
     private String country;
-    @Column(name = "pPhone")
     private String phone;
-    @Column(name = "pEmail")
     private String email;
-    @Column(name = "pCheckInTime")
     private String checkInTime;
-    @Column(name = "pCheckOutTime")
     private String checkOutTime;
 
-    private String partner;
+    private Partner partner;
 
     private PropertyType propertyType;
 
@@ -49,7 +31,7 @@ public class Property {
 
     public Property(){}
 
-    public Property(String name, String description, String road, String district, String city, String zipCode, String country, String phone, String email, String checkInTime, String checkOutTime, PropertyType propertyType, List<PropertyFacility> propertyFacilities, List<Room> rooms) {
+    public Property(String name, String description, String road, String district, String city, String zipCode, String country, String phone, String email, String checkInTime, String checkOutTime, Partner partner, PropertyType propertyType, List<PropertyFacility> propertyFacilities, List<Room> rooms) {
         this.name = name;
         this.description = description;
         this.road = road;
@@ -61,6 +43,7 @@ public class Property {
         this.email = email;
         this.checkInTime = checkInTime;
         this.checkOutTime = checkOutTime;
+        this.partner = partner;
         this.propertyType = propertyType;
         this.propertyFacilities = propertyFacilities;
         this.rooms = rooms;
@@ -162,6 +145,14 @@ public class Property {
         this.checkOutTime = checkOutTime;
     }
 
+    public Partner getPartner() {
+        return partner;
+    }
+
+    public void setPartner(Partner partner) {
+        this.partner = partner;
+    }
+
     public PropertyType getPropertyType() {
         return propertyType;
     }
@@ -206,4 +197,6 @@ public class Property {
                 ", rooms=" + rooms +
                 '}';
     }
+
+
 }

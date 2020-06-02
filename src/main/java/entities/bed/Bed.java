@@ -1,21 +1,20 @@
 package entities.bed;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import utils.JDBCUtil;
 
-@Entity
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bed {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "bId")
     private Integer id;
-    @Column(name = "bName")
     private String name;
-    @Column(name = "bCapacity")
     private Integer capacity;
+    private Integer roomId;
 
     public Bed() {
     }
@@ -23,6 +22,13 @@ public class Bed {
     public Bed(String name, Integer capacity) {
         this.name = name;
         this.capacity = capacity;
+    }
+
+    public Bed(Integer id, String name, Integer capacity, Integer roomId) {
+        this.id = id;
+        this.name = name;
+        this.capacity = capacity;
+        this.roomId = roomId;
     }
 
     public Integer getId() {

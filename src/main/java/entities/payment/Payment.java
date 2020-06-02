@@ -1,20 +1,11 @@
 package entities.payment;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import entities.booking.Booking;
 
-@Entity
 public class Payment {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "pId")
     private Integer id;
-    @Column(name = "pType")
     private String type;
-    @Column(name = "pStatus")
     private String status;
 
     public Payment() {

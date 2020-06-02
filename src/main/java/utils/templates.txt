@@ -1,0 +1,19 @@
+String sql = "";
+
+try (Connection conn = JDBCUtil.getConnection();
+    PreparedStatement ps = conn.prepareStatement(sql)) {
+
+    ps.setDataType(?, ?);
+    ResultSet rs = ps.executeQuery();
+
+
+    try{
+       rs.close();
+       ps.close();
+       conn.close();
+    } catch(SQLException e) {
+       System.out.println(e.getMessage());
+    }
+} catch (SQLException ex) {
+    System.out.println(ex.getMessage());
+}

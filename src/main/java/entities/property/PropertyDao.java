@@ -1,38 +1,22 @@
 package entities.property;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import javax.swing.*;
+import java.util.List;
 
-import utils.HibernateUtil;
+public interface PropertyDao {
 
-public class PropertyDao {
+    void listAllProperties(JTable table);
 
-    public static void insert(String name, String description, String road, String district, String city, String zip, String country, String phone, String email, String checkIn, String checkOut){
-        try{
-            Property objProperty = new Property();
-            objProperty.setName(name);
-            objProperty.setDescription(description);
-            objProperty.setRoad(road);
-            objProperty.setDistrict(district);
-            objProperty.setCity(city);
-            objProperty.setZipCode(zip);
-            objProperty.setCountry(country);
-            objProperty.setPhone(phone);
-            objProperty.setEmail(email);
-            objProperty.setCheckInTime(checkIn);
-            objProperty.setCheckOutTime(checkOut);
+//    List<Property> listAllProperties();
+    List<Property> listAllPropertiesSearch();
+    List<Property> listAllPartnerProperties();
+    boolean insertProperty();
+    boolean updateProperty();
 
-            SessionFactory sessionFactory = HibernateUtil.buildSessionFactory(Property.class);
-            Session session = sessionFactory.openSession();
-            session.beginTransaction();
+    void listAllPropertyFacilities(JList ItemList, Integer propertyId);
+    boolean insertPropertyFacility(Integer propertyId);
+    boolean updatePropertyFacility(Integer propertyId);
 
-            session.save(objProperty);
-            System.out.println("Property Created Successfully!");
-            session.getTransaction().commit();
-            session.close();
-            sessionFactory.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
+    boolean insertPropertyType();
+    boolean updatePropertyType();
 }

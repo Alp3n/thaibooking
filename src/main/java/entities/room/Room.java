@@ -1,42 +1,35 @@
 package entities.room;
 
-import entities.roomFacility.RoomFacility;
+import entities.booking.Booking;
+import entities.property.Property;
 import entities.bed.Bed;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 public class Room {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "rId")
     private Integer id;
-    @Column(name = "rName")
     private String name;
-    @Column(name = "rSize")
     private Integer size;
-    @Column(name = "rPriceNight")
     private Integer priceNight;
+    private Integer roomNumber;
+    private Integer propertyId;
 
-    private List<RoomFacility> roomFacilities = new ArrayList<>();
-
-    private List<Bed> beds = new ArrayList<>();
-
-    public Room() {
+    public Room(String name, Integer priceNight, Integer size) {
+        this.name = name;
+        this.priceNight = priceNight;
+        this.size = size;
     }
 
-    public Room(String name, Integer size, Integer priceNight, List<RoomFacility> roomFacilities, List<Bed> beds) {
+    public Room(Integer id, String name, Integer size, Integer priceNight, Integer roomNumber, Integer propertyId) {
+        this.id = id;
         this.name = name;
         this.size = size;
         this.priceNight = priceNight;
-        this.roomFacilities = roomFacilities;
-        this.beds = beds;
+        this.roomNumber = roomNumber;
+        this.propertyId = propertyId;
     }
 
     public Integer getId() {
@@ -71,31 +64,30 @@ public class Room {
         this.priceNight = priceNight;
     }
 
-    public List<RoomFacility> getRoomFacilities() {
-        return roomFacilities;
+    public Integer getRoomNumber() {
+        return roomNumber;
     }
 
-    public void setRoomFacilities(List<RoomFacility> roomFacilities) {
-        this.roomFacilities = roomFacilities;
+    public void setRoomNumber(Integer roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
-    public List<Bed> getBeds() {
-        return beds;
+    public Integer getPropertyId() {
+        return propertyId;
     }
 
-    public void setBeds(List<Bed> beds) {
-        this.beds = beds;
+    public void setPropertyId(Integer propertyId) {
+        this.propertyId = propertyId;
     }
+
+
 
     @Override
     public String toString() {
         return "Room{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", size=" + size +
                 ", priceNight=" + priceNight +
-                ", roomFacilities=" + roomFacilities +
-                ", beds=" + beds +
                 '}';
     }
 }

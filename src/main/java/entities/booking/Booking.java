@@ -1,54 +1,40 @@
 package entities.booking;
 
-import entities.customer.Customer;
-import entities.guest.Guest;
-import entities.payment.Payment;
-import entities.room.Room;
+import java.time.*;
 
-import javax.persistence.*;
-import java.util.Date;
-
-@Entity
 public class Booking {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "bId")
     private Integer id;
-    @Column(name = "bCheckIn")
-    private Date checkIn;
-    @Column(name = "bCheckOut")
-    private Date checkOut;
-    @Column(name = "bNights")
+    private String status;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
     private Integer nights;
+    private Integer numberOfGuests;
+    private Integer roomId;
+    private Integer propertyId;
+    private Integer customerId;
+    private Integer guestId;
+    private Integer paymentId;
 
-    @ManyToOne
-    @JoinColumn(name = "rId")
-    private Room room;
-
-    @ManyToOne
-    @JoinColumn(name = "cId")
-    private Customer customer;
-
-    @OneToOne
-    @JoinColumn(name = "gId")
-    private Guest guest;
-
-    @OneToOne
-    @JoinColumn(name = "pId")
-    private Payment payment;
-
-    public Booking() {
-    }
-
-    public Booking(Date checkIn, Date checkOut, Integer nights, Room room, Customer customer, Guest guest, Payment payment) {
+    public Booking(String status,LocalDate checkIn, LocalDate checkOut, Integer nights, Integer numberOfGuests, Integer propertyId, Integer roomId, Integer customerId, Integer guestId, Integer paymentId) {
+        this.status = status;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.nights = nights;
-        this.room = room;
-        this.customer = customer;
-        this.guest = guest;
-        this.payment = payment;
+        this.numberOfGuests = numberOfGuests;
+        this.propertyId = propertyId;
+        this.roomId = roomId;
+        this.customerId = customerId;
+        this.guestId = guestId;
+        this.paymentId = paymentId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Integer getId() {
@@ -59,19 +45,19 @@ public class Booking {
         this.id = id;
     }
 
-    public Date getCheckIn() {
+    public LocalDate getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(Date checkIn) {
+    public void setCheckIn(LocalDate checkIn) {
         this.checkIn = checkIn;
     }
 
-    public Date getCheckOut() {
+    public LocalDate getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(Date checkOut) {
+    public void setCheckOut(LocalDate checkOut) {
         this.checkOut = checkOut;
     }
 
@@ -83,49 +69,51 @@ public class Booking {
         this.nights = nights;
     }
 
-    public Room getRoom() {
-        return room;
+    public Integer getNumberOfGuests() {
+        return numberOfGuests;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setNumberOfGuests(Integer numberOfGuests) {
+        this.numberOfGuests = numberOfGuests;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Integer getPropertyId() {
+        return propertyId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setPropertyId(Integer propertyId) {
+        this.propertyId = propertyId;
     }
 
-    public Guest getGuest() {
-        return guest;
+    public Integer getRoomId() {
+        return roomId;
     }
 
-    public void setGuest(Guest guest) {
-        this.guest = guest;
+    public void setRoomId(Integer roomId) {
+        this.roomId = roomId;
     }
 
-    public Payment getPayment() {
-        return payment;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
-    @Override
-    public String toString() {
-        return "Booking{" +
-                "id=" + id +
-                ", checkIn=" + checkIn +
-                ", checkOut=" + checkOut +
-                ", nights=" + nights +
-                ", room=" + room +
-                ", customer=" + customer +
-                ", guest=" + guest +
-                ", payment=" + payment +
-                '}';
+    public Integer getGuestId() {
+        return guestId;
+    }
+
+    public void setGuestId(Integer guestId) {
+        this.guestId = guestId;
+    }
+
+    public Integer getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(Integer paymentId) {
+        this.paymentId = paymentId;
     }
 }
