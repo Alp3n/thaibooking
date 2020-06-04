@@ -7,6 +7,8 @@ public interface PaymentDao {
 
     Payment extractPaymentFromResultSet(ResultSet rs) throws SQLException;
 
+    Payment getPayment(Integer pId);
+
     boolean createPayment();
 
     boolean insertPaymentToBooking(Integer bookingId);

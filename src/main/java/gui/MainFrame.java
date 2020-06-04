@@ -400,7 +400,7 @@ public class MainFrame extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 Integer bookingId = getIdFromTable(bUpcomingTable);
-                setBookingDetails(bookingDao, roomDao, bookingId);
+                setBookingDetails(bookingDao, roomDao, userDao, paymentDao, bookingId);
             }
         });
         bCheckedInTable.addMouseListener(new MouseAdapter() {
@@ -583,20 +583,34 @@ public class MainFrame extends JFrame {
         }
     }
 
-    private void setBookingDetails(BookingDaoImpl bookingDao, RoomDaoImpl roomDao, UserDaoImpl userDao, Integer bId) {
-        bbIdLabel.setText(bookingDao.getBooking(bId).g);
-        bnGuestLabel.setText(userDao.getUser(uId));
+    private void setBookingDetails(BookingDaoImpl bookingDao, RoomDaoImpl roomDao, UserDaoImpl userDao, PaymentDaoImpl paymentDao, Integer bId) {
+
+        bbIdLabel.setText(String.valueOf(bookingDao.getBooking(bId).getId()));
+        Integer uId = bookingDao.getBooking(bId).getUserId();
+        String fullName = userDao.getUser(uId).getfName() + " " + userDao.getUser(uId).getlName();
+        bnGuestLabel.setText(fullName);
+
         LocalDate checkIn = bookingDao.getBooking(bId).getCheckIn();
         LocalDate checkOut = bookingDao.getBooking(bId).getCheckOut();
         String stayDate = "From " + checkIn + " till " + checkOut;
         bsDateLabel.setText(stayDate);
-        long stayDuration = DAYS.between(checkIn, checkOut);
+
+        Integer stayDuration = (int) DAYS.between(checkIn, checkOut);
         bnNumber.setText(String.valueOf(stayDuration));
+
         Integer roomId = bookingDao.getBooking(bId).getRoomId();
         String roomNumber = String.valueOf(roomDao.getRoom(roomId).getRoomNumber());
+
         brNumberLabel.setText(roomNumber);
-        System.out.println("test22");
         bbStatusLabel.setText(bookingDao.getBooking(bId).getStatus());
+        Integer pId = bookingDao.getBooking(bId).getPaymentId();
+        bpTypeLabel.setText(paymentDao.getPayment(pId).getType());
+        bpStatusLabel.setText(paymentDao.getPayment(pId).getStatus());
+
+        //Total price
+        int roomPrice = roomDao.getRoom(roomId).getPriceNight();
+        Integer totalPrice = stayDuration * roomPrice;
+        bpTotalLabel.setText(String.valueOf(totalPrice));
     }
 
     private void updateProperty(PropertyDaoImpl propertyDao) {

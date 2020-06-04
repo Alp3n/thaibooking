@@ -24,7 +24,7 @@ public class BookingDaoImpl implements BookingDao {
         booking.setCheckOut((rs.getDate("bCheckOut").toLocalDate()));
         booking.setRoomId((rs.getInt("roomId")));
         booking.setPropertyId((rs.getInt("roomPropertyId")));
-        booking.setCustomerId((rs.getInt("userId")));
+        booking.setUserId((rs.getInt("userId")));
         booking.setPaymentId((rs.getInt("paymentId")));
 
         return booking;

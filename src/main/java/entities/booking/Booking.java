@@ -11,7 +11,7 @@ public class Booking {
     private Integer numberOfGuests;
     private Integer roomId;
     private Integer propertyId;
-    private Integer customerId;
+    private Integer userId;
     private Integer paymentId;
 
     public Booking(){}
@@ -72,12 +72,12 @@ public class Booking {
         this.roomId = roomId;
     }
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getPaymentId() {

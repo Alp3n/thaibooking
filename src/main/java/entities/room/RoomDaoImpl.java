@@ -118,7 +118,7 @@ public class RoomDaoImpl implements RoomDao {
 
             try {
                 while (rs.next()) {
-                    extractRoomFromResultSet(rs);
+                    return extractRoomFromResultSet(rs);
                 }
             } finally {
                 rs.close();

@@ -1,7 +1,8 @@
 package entities.payment;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import utils.JDBCUtil;
+
+import java.sql.*;
 
 public class PaymentDaoImpl implements PaymentDao {
 
@@ -15,6 +16,34 @@ public class PaymentDaoImpl implements PaymentDao {
         payment.setStatus((rs.getString("pStatus")));
 
         return payment;
+    }
+
+    @Override
+    public Payment getPayment(Integer pId) {
+        String sql =
+                "SELECT *\n" +
+                "FROM payment";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ResultSet rs = ps.executeQuery();
+
+            try {
+                while (rs.next()) {
+                    return extractPaymentFromResultSet(rs);
+                }
+            } finally {
+                rs.close();
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return null;
     }
 
     @Override
