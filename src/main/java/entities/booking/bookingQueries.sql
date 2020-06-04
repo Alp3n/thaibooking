@@ -23,7 +23,7 @@ WHERE userId = ? AND bStatus = ?;
 # Select all pending/checked in/out/archived/cancelled partner bookings
 SELECT *
 FROM booking
-WHERE roomPropertyId = ?;
+WHERE roomPropertyId = ? AND bStatus = ?;
 
 # Select booking for specified row in pending booking table partner
 SELECT *

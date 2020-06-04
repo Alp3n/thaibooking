@@ -5,9 +5,55 @@ import utils.JDBCUtil;
 
 import javax.swing.*;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.List;
 
 public class PropertyDaoImpl implements PropertyDao {
+
+    @Override
+    public Property extractPropertyFromResultSet(ResultSet rs) throws SQLException {
+
+        Property property = new Property();
+
+        property.setId((rs.getInt("pId")));
+        property.setStars((rs.getString("pStars")));
+        property.setName((rs.getString("pName")));
+        property.setDescription((rs.getString("pDescription")));
+        property.setRoad((rs.getString("pRoad")));
+        property.setDistrict((rs.getString("pDistrict")));
+        property.setCity((rs.getString("pCity")));
+        property.setZipCode((rs.getString("pZipCode")));
+        property.setEmail((rs.getString("pEmail")));
+        property.setPhone((rs.getString("pPhone")));
+        property.setCheckInTime((rs.getString("pCheckInTime")));
+        property.setCheckOutTime((rs.getString("pCheckOutTime")));
+        property.setPropertyType((rs.getInt("propertyType")));
+        property.setPartner((rs.getInt("userId")));
+
+        return property;
+    }
+
+    @Override
+    public PropertyType extractPropertyTypeFromResultSet(ResultSet rs) throws SQLException {
+
+        PropertyType propertyType = new PropertyType();
+
+        propertyType.setId((rs.getInt("ptId")));
+        propertyType.setName((rs.getString("ptName")));
+
+        return propertyType;
+    }
+
+    @Override
+    public PropertyFacility extractPropertyFacilityFromResultSet(ResultSet rs) throws SQLException {
+
+        PropertyFacility propertyFacility = new PropertyFacility();
+
+        propertyFacility.setId((rs.getInt("pfId")));
+        propertyFacility.setName((rs.getString("pfName")));
+
+        return propertyFacility;
+    }
 
     @Override
     public void listAllProperties(JTable table) {
@@ -38,24 +84,200 @@ public class PropertyDaoImpl implements PropertyDao {
         }
     }
 
+
+
     @Override
-    public List<Property> listAllPropertiesSearch() {
+    public Property listAllPropertiesSearch(JTable table, String searchPhrase, LocalDate checkIn, LocalDate checkOut, int guestsNumber) {
         return null;
     }
 
     @Override
-    public List<Property> listAllPartnerProperties() {
+    public PropertyType getPropertyTypes(JComboBox comboBox) {
+        String sql =
+                "SELECT *\n" +
+                "FROM property_type";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             Statement st = conn.createStatement()) {
+
+            ResultSet rs = st.executeQuery(sql);
+
+            try {
+                while (rs.next()) {
+                    comboBox.addItem(extractPropertyTypeFromResultSet(rs));
+                }
+            } finally {
+                rs.close();
+                st.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
         return null;
     }
 
     @Override
-    public boolean insertProperty() {
-        return false;
+    public PropertyFacility getPropertyFacility(JComboBox comboBox) {
+        String sql =
+                "SELECT *\n" +
+                "FROM property_facility";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             Statement st = conn.createStatement()) {
+
+            ResultSet rs = st.executeQuery(sql);
+
+            try {
+                while (rs.next()) {
+                    comboBox.addItem(extractPropertyFacilityFromResultSet(rs));
+                }
+            } finally {
+                rs.close();
+                st.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return null;
     }
 
     @Override
-    public boolean updateProperty() {
-        return false;
+    public Property getPartnerProperty(Integer partnerId) {
+        String sql =
+                "SELECT *\n" +
+                "FROM property\n" +
+                "WHERE userId = ?";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, partnerId);
+            ResultSet rs = ps.executeQuery();
+
+            try {
+                while (rs.next()) {
+                    return extractPropertyFromResultSet(rs);
+                }
+            } finally {
+                rs.close();
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public boolean insertProperty(String pStars, String pName, String pDescription, String pRoad, String pDistrict, String pCity, String pZipCode, String pEmail, String pPhone, String pCheckIn, String pCheckOut, Integer userId, Integer propertyType) {
+
+        String sql =
+                "INSERT INTO property\n" +
+                "(\n" +
+                "    pStars,\n" +
+                "    pName,\n" +
+                "    pDescription,\n" +
+                "    pRoad,\n" +
+                "    pDistrict,\n" +
+                "    pCity,\n" +
+                "    pZipCode,\n" +
+                "    pEmail,\n" +
+                "    pPhone,\n" +
+                "    pCheckInTime,\n" +
+                "    pCheckOutTime,\n" +
+                "    propertyType,\n" +
+                "    userId\n" +
+                ")\n" +
+                "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            try {
+                ps.setString(1, pStars);
+                ps.setString(2, pName);
+                ps.setString(3, pDescription);
+                ps.setString(4, pRoad);
+                ps.setString(5, pDistrict);
+                ps.setString(6, pCity);
+                ps.setString(7, pZipCode);
+                ps.setString(8, pEmail);
+                ps.setString(9, pPhone);
+                ps.setString(10, pCheckIn);
+                ps.setString(11, pCheckOut);
+                ps.setInt(12, propertyType);
+                ps.setInt(13, userId);
+
+                ps.executeUpdate();
+            } finally {
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return true;
+    }
+
+    @Override
+    public boolean updateProperty(String pStars, String pName, String pDescription, String pRoad, String pDistrict, String pCity, String pZipCode, String pEmail, String pPhone, String pCheckIn, String pCheckOut, Integer userId, Integer propertyType, Integer propertyId) {
+
+        String sql =
+                "UPDATE property\n" +
+                "\n" +
+                "SET" +
+                "    pStars = ?,\n" +
+                "    pName = ?,\n" +
+                "    pDescription = ?,\n" +
+                "    pRoad = ?,\n" +
+                "    pDistrict = ?,\n" +
+                "    pCity = ?,\n" +
+                "    pZipCode = ?,\n" +
+                "    pEmail = ?,\n" +
+                "    pPhone = ?,\n" +
+                "    pCheckInTime = ?,\n" +
+                "    pCheckOutTime = ?,\n" +
+                "    propertyType = ?,\n" +
+                "    userId = ?\n" +
+                "\n" +
+                "WHERE pId = ?";
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            try {
+                ps.setString(1, pStars);
+                ps.setString(2, pName);
+                ps.setString(3, pDescription);
+                ps.setString(4, pRoad);
+                ps.setString(5, pDistrict);
+                ps.setString(6, pCity);
+                ps.setString(7, pZipCode);
+                ps.setString(8, pEmail);
+                ps.setString(9, pPhone);
+                ps.setString(10, pCheckIn);
+                ps.setString(11, pCheckOut);
+                ps.setInt(12, propertyType);
+                ps.setInt(13, userId);
+                ps.setInt(14, propertyId);
+
+                ps.executeUpdate();
+            } finally {
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return true;
     }
 
     @Override
@@ -71,7 +293,6 @@ public class PropertyDaoImpl implements PropertyDao {
                 "LEFT JOIN property_facility ON\n" +
                 "    property_facility.pfId = property_has_property_facility.propertyFacilityId\n" +
                 "WHERE propertyId = ?";
-
 
         try (Connection conn = JDBCUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -98,22 +319,33 @@ public class PropertyDaoImpl implements PropertyDao {
     }
 
     @Override
-    public boolean insertPropertyFacility(Integer propertyId) {
-        return false;
+    public boolean insertPropertyFacility(Integer propertyFacilityId,Integer propertyId) {
+
+        String sql =
+                "INSERT INTO property_has_property_facility\n" +
+                "(\n" +
+                "    propertyId,\n" +
+                "    propertyFacilityId\n" +
+                ")\n" +
+                "VALUES (?,?)";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            try {
+                ps.setInt(1, propertyId);
+                ps.setInt(2, propertyFacilityId);
+
+                ps.executeUpdate();
+            } finally {
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return true;
     }
 
-    @Override
-    public boolean updatePropertyFacility(Integer propertyId) {
-        return false;
-    }
-
-    @Override
-    public boolean insertPropertyType() {
-        return false;
-    }
-
-    @Override
-    public boolean updatePropertyType() {
-        return false;
-    }
 }

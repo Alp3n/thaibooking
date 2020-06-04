@@ -7,18 +7,9 @@ public class RoomFacility {
 
     private Integer roomId;
 
-    public RoomFacility(Integer roomId){
-        this.roomId = roomId;
-    }
+    public RoomFacility()
+    {}
 
-    public RoomFacility(String name) {
-        this.name = name;
-    }
-
-    public RoomFacility(String name, Integer roomId) {
-        this.name = name;
-        this.roomId = roomId;
-    }
 
     public Integer getId() {
         return id;

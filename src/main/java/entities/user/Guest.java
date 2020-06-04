@@ -4,6 +4,9 @@ public class Guest extends User {
 
     private Integer bookingId;
 
+    public Guest(){}
+
+
     public Guest(String fName, String lName, String passport, Integer bookingId) {
         super(fName, lName, passport);
         this.bookingId = bookingId;

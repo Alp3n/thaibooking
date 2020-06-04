@@ -1,9 +1,16 @@
 package main;
 
+import entities.user.User;
 import entities.user.UserDaoImpl;
 
 public class LoginAuthentication {
 
-    public
-    UserDaoImpl userDao = new UserDaoImpl();
+    public LoginAuthentication() { }
+
+    public User loginAuth(String email, String password) {
+        UserDaoImpl userDao = new UserDaoImpl();
+        User user = userDao.getUserByEmailAndPassword(email, password);
+
+        return user;
+    }
 }

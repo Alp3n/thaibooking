@@ -1,13 +1,15 @@
 package entities.bed;
 
-import entities.room.RoomFacility;
-
 import javax.swing.*;
-import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public interface BedDao {
 
+    Bed extractBedFromResultSet(ResultSet rs) throws SQLException;
+
     void listAllBedsInRoom(JTable table, Integer roomId);
-    boolean insertBed();
-    boolean deleteBed();
+    void tableAllBeds(JTable table, Integer roomId);
+    boolean insertBed(String name, Integer capacity, Integer roomId);
+    boolean deleteBed(Integer roomId);
 }

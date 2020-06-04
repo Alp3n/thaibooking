@@ -2,8 +2,19 @@ package main;
 
 import gui.MainFrame;
 
+import javax.swing.*;
+
 public class App {
     public static void main(String[] args) {
-        new MainFrame().setVisible(true);
+
+
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                MainFrame frame = new MainFrame();
+                frame.setVisible(true);
+            }
+        });
     }
 }

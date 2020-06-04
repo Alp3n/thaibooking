@@ -2,7 +2,7 @@
 ####               USER QUERIES                 ####
 ####################################################
 # Insert person
-INSERT INTO user (uFirstName, uLastName, uPassport, uEmail, uPhone, uPassword, uUserType)
+INSERT INTO user (uFirstName, uLastName, uPassport, uEmail, uPhone, uPassword, uType)
 VALUES (?,?,?,?,?,?,?);
 
 # Query person for login and password authentication

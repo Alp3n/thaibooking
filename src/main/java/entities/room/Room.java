@@ -17,6 +17,8 @@ public class Room {
     private Integer roomNumber;
     private Integer propertyId;
 
+    public Room() {}
+
     public Room(String name, Integer priceNight, Integer size) {
         this.name = name;
         this.priceNight = priceNight;

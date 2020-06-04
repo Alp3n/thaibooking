@@ -8,26 +8,13 @@ public class Booking {
     private String status;
     private LocalDate checkIn;
     private LocalDate checkOut;
-    private Integer nights;
     private Integer numberOfGuests;
     private Integer roomId;
     private Integer propertyId;
     private Integer customerId;
-    private Integer guestId;
     private Integer paymentId;
 
-    public Booking(String status,LocalDate checkIn, LocalDate checkOut, Integer nights, Integer numberOfGuests, Integer propertyId, Integer roomId, Integer customerId, Integer guestId, Integer paymentId) {
-        this.status = status;
-        this.checkIn = checkIn;
-        this.checkOut = checkOut;
-        this.nights = nights;
-        this.numberOfGuests = numberOfGuests;
-        this.propertyId = propertyId;
-        this.roomId = roomId;
-        this.customerId = customerId;
-        this.guestId = guestId;
-        this.paymentId = paymentId;
-    }
+    public Booking(){}
 
     public String getStatus() {
         return status;
@@ -45,28 +32,20 @@ public class Booking {
         this.id = id;
     }
 
-    public LocalDate getCheckIn() {
-        return checkIn;
-    }
-
     public void setCheckIn(LocalDate checkIn) {
         this.checkIn = checkIn;
-    }
-
-    public LocalDate getCheckOut() {
-        return checkOut;
     }
 
     public void setCheckOut(LocalDate checkOut) {
         this.checkOut = checkOut;
     }
 
-    public Integer getNights() {
-        return nights;
+    public LocalDate getCheckIn() {
+        return checkIn;
     }
 
-    public void setNights(Integer nights) {
-        this.nights = nights;
+    public LocalDate getCheckOut() {
+        return checkOut;
     }
 
     public Integer getNumberOfGuests() {
@@ -99,14 +78,6 @@ public class Booking {
 
     public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
-    }
-
-    public Integer getGuestId() {
-        return guestId;
-    }
-
-    public void setGuestId(Integer guestId) {
-        this.guestId = guestId;
     }
 
     public Integer getPaymentId() {

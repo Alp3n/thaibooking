@@ -10,7 +10,9 @@ public interface UserDao {
 
     User extractUserFromResultSet(ResultSet rs) throws SQLException;
 
-    boolean insertCustomer();
-    boolean insertPartner();
+    User getUser(Integer bId);
+
+    boolean insertRegular(String fName, String lName, String passport, String email, String phone, String pass);
+    boolean insertPartner(String fName, String lName, String passport, String email, String phone, String pass);
     boolean insertGuest();
 }

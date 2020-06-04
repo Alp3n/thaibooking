@@ -9,16 +9,18 @@ public class User {
     private String phone;
     private String password;
     private String passport;
+    private String type;
 
     public User(){}
 
-    public User(String fName, String lName, String email, String phone, String password, String passport) {
+    public User(String fName, String lName, String email, String phone, String password, String passport, String type) {
         this.fName = fName;
         this.lName = lName;
         this.email = email;
         this.phone = phone;
         this.password = password;
         this.passport = passport;
+        this.type = type;
     }
 
     public User(String fName, String lName, String passport) {
@@ -81,5 +83,13 @@ public class User {
 
     public void setPassport(String passport) {
         this.passport = passport;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

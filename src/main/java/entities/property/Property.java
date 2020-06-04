@@ -9,6 +9,7 @@ import java.util.List;
 public class Property {
 
     private Integer id;
+    private String stars;
     private String name;
     private String description;
     private String road;
@@ -21,33 +22,12 @@ public class Property {
     private String checkInTime;
     private String checkOutTime;
 
-    private Partner partner;
+    private Integer partner;
 
-    private PropertyType propertyType;
-
-    private List<PropertyFacility> propertyFacilities = new ArrayList<>();
-
-    private List<Room> rooms = new ArrayList<>();
+    private Integer propertyType;
 
     public Property(){}
 
-    public Property(String name, String description, String road, String district, String city, String zipCode, String country, String phone, String email, String checkInTime, String checkOutTime, Partner partner, PropertyType propertyType, List<PropertyFacility> propertyFacilities, List<Room> rooms) {
-        this.name = name;
-        this.description = description;
-        this.road = road;
-        this.district = district;
-        this.city = city;
-        this.zipCode = zipCode;
-        this.country = country;
-        this.phone = phone;
-        this.email = email;
-        this.checkInTime = checkInTime;
-        this.checkOutTime = checkOutTime;
-        this.partner = partner;
-        this.propertyType = propertyType;
-        this.propertyFacilities = propertyFacilities;
-        this.rooms = rooms;
-    }
 
     public Integer getId() {
         return id;
@@ -145,58 +125,28 @@ public class Property {
         this.checkOutTime = checkOutTime;
     }
 
-    public Partner getPartner() {
+    public Integer getPartner() {
         return partner;
     }
 
-    public void setPartner(Partner partner) {
+    public void setPartner(Integer partner) {
         this.partner = partner;
     }
 
-    public PropertyType getPropertyType() {
+    public Integer getPropertyType() {
         return propertyType;
     }
 
-    public void setPropertyType(PropertyType propertyType) {
+    public void setPropertyType(Integer propertyType) {
         this.propertyType = propertyType;
     }
 
-    public List<PropertyFacility> getPropertyFacilities() {
-        return propertyFacilities;
+    public String getStars() {
+        return stars;
     }
 
-    public void setPropertyFacilities(List<PropertyFacility> propertyFacilities) {
-        this.propertyFacilities = propertyFacilities;
+    public void setStars(String stars) {
+        this.stars = stars;
     }
-
-    public List<Room> getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
-    }
-
-    @Override
-    public String toString() {
-        return "Property{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", road='" + road + '\'' +
-                ", district='" + district + '\'' +
-                ", city='" + city + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", country='" + country + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", checkInTime='" + checkInTime + '\'' +
-                ", checkOutTime='" + checkOutTime + '\'' +
-                ", propertyType=" + propertyType +
-                ", propertyFacilities=" + propertyFacilities +
-                ", rooms=" + rooms +
-                '}';
-    }
-
 
 }

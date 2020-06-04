@@ -8,14 +8,8 @@ public class PropertyFacility {
     private Integer id;
     private String name;
 
-    private List<Property> properties = new ArrayList<>();
 
     public PropertyFacility(){}
-
-    public PropertyFacility(String name, List<Property> properties) {
-        this.name = name;
-        this.properties = properties;
-    }
 
     public Integer getId() {
         return id;
@@ -33,11 +27,8 @@ public class PropertyFacility {
         this.name = name;
     }
 
-    public List<Property> getProperties() {
-        return properties;
-    }
-
-    public void setProperties(List<Property> properties) {
-        this.properties = properties;
+    @Override
+    public String toString() {
+        return name;
     }
 }
