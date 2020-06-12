@@ -4,7 +4,6 @@
 # Insert booking
 INSERT INTO booking
 (
-    bGuests,
     bCheckIn,
     bCheckOut,
     bStatus,
@@ -13,7 +12,7 @@ INSERT INTO booking
     roomId,
     roomPropertyId
 )
-VALUES (?,?,?,?,?,?,?,?);
+VALUES (?,?,?,?,?,?,?);
 
 # Select all pending/archived/cancelled customer bookings
 SELECT *
@@ -33,7 +32,6 @@ WHERE bId = ? AND roomPropertyId = ?;
 # Select details for booking from table row
 SELECT
     bId,
-    bGuests,
     bCheckIn,
     bCheckOut,
     uFirstName,
@@ -46,7 +44,6 @@ SELECT
     rPrice
 FROM
     booking
-        LEFT JOIN guest g on booking.bId = g.booking
         LEFT JOIN payment p on booking.paymentId = p.pId
         LEFT JOIN user u on booking.userId = u.uId
         LEFT JOIN room r on booking.roomId = r.rId and booking.roomPropertyId = r.propertyId

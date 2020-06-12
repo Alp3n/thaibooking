@@ -3,6 +3,7 @@ package entities.booking;
 import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public interface BookingDao {
@@ -14,7 +15,7 @@ public interface BookingDao {
     void tableAllRegularBookings(JTable table, Integer userId, String status);
 //    void tableAllCustomerArchiveBookings(JTable table, Integer userId, String status);
 
-    boolean createBooking(Integer userId);
+    boolean createBooking(Integer userId, Integer roomId, Integer propertyId, Integer paymentId, LocalDate checkIn, LocalDate checkOut, String status);
     boolean cancelBooking(Integer userId);
 
 
@@ -22,7 +23,7 @@ public interface BookingDao {
     /*void tableAllPartnerCheckedInBookings(JTable table, Integer propertyId, String status);
     void tableAllPartnerArchivedInBookings(JTable table, Integer propertyId, String status);*/
 
-    boolean checkInBooking();
-    boolean checkOutBooking();
-    boolean cancelPartnerBooking(Integer roomId);
+    boolean checkInBooking(Integer bookingId);
+    boolean checkOutBooking(Integer bookingId);
+    boolean cancelPartnerBooking(Integer bookingId);
 }

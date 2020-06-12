@@ -9,9 +9,7 @@ public interface PaymentDao {
 
     Payment getPayment(Integer pId);
 
-    boolean createPayment();
-
-    boolean insertPaymentToBooking(Integer bookingId);
-    boolean updatePaymentInBooking(Integer bookingId);
+    Integer insertPaymentToBooking(String pType, String pStatus, Integer pTotal);
+    boolean updatePaymentInBooking(Integer paymentId);
 
 }

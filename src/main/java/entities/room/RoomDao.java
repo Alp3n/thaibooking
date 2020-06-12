@@ -3,6 +3,7 @@ package entities.room;
 import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public interface RoomDao {
 
@@ -10,7 +11,7 @@ public interface RoomDao {
     void listAllRoomsInProperty(JTable table, Integer propertyId);
     void tableAllRooms(JTable table, Integer propertyId);
     Room extractRoomFromResultSet(ResultSet rs) throws SQLException;
-    void listPropertyRoomsSearch(Integer propertyId);
+    Room listAvailablePropertyRoomsSearch(JTable table, Integer propertyId, LocalDate checkIn, LocalDate checkOut);
 
     Room getRoom(Integer roomId);
 

@@ -26,7 +26,7 @@ public class Property {
 
     private Integer propertyType;
 
-    public Property(){}
+    public Property() {}
 
 
     public Integer getId() {

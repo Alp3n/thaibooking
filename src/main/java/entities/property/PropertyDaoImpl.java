@@ -5,8 +5,7 @@ import utils.JDBCUtil;
 
 import javax.swing.*;
 import java.sql.*;
-import java.time.LocalDate;
-import java.util.List;
+
 
 public class PropertyDaoImpl implements PropertyDao {
 
@@ -32,6 +31,68 @@ public class PropertyDaoImpl implements PropertyDao {
 
         return property;
     }
+
+    @Override
+    public Property getPropertyByPropertyId(Integer propertyId) {
+        String sql =
+                "SELECT *\n" +
+                "FROM property\n" +
+                "WHERE pId = ?";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, propertyId);
+            ResultSet rs = ps.executeQuery();
+
+            try {
+                while (rs.next()) {
+                    return extractPropertyFromResultSet(rs);
+                }
+            } finally {
+                rs.close();
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return null;
+    }
+
+    @Override
+    public Property getPropertyByUserId(Integer userId) {
+
+        String sql =
+                "SELECT *\n" +
+                "FROM property\n" +
+                "WHERE userId = ?";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+
+            try {
+                while (rs.next()) {
+                    return extractPropertyFromResultSet(rs);
+                }
+            } finally {
+                rs.close();
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return null;
+    }
+
 
     @Override
     public PropertyType extractPropertyTypeFromResultSet(ResultSet rs) throws SQLException {
@@ -62,7 +123,8 @@ public class PropertyDaoImpl implements PropertyDao {
                 "pId AS 'ID'," +
                 "pName AS 'Name'," +
                 "pCity AS 'City'," +
-                "pDistrict AS 'District'" +
+                "pDistrict AS 'District'," +
+                "pRoad AS 'Road'" +
                 "FROM property";
 
         try (Connection conn = JDBCUtil.getConnection();
@@ -84,17 +146,46 @@ public class PropertyDaoImpl implements PropertyDao {
         }
     }
 
-
-
     @Override
-    public Property listAllPropertiesSearch(JTable table, String searchPhrase, LocalDate checkIn, LocalDate checkOut, int guestsNumber) {
+    public Property listAllPropertiesSearch(JTable table, String searchPhrase) {
+
+        String sql =
+                "SELECT " +
+                "pId AS 'ID', " +
+                "pName AS 'Name', " +
+                "pCity AS 'City', " +
+                "pDistrict AS 'District', " +
+                "pRoad AS 'Road' " +
+                "FROM " +
+                "   property " +
+                "WHERE CONCAT(pName, pDistrict, pCity, pRoad, pZipCode) " +
+                "LIKE CONCAT('%',?,'%')";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, searchPhrase );
+            ResultSet rs = ps.executeQuery();
+
+            try {
+                table.setModel(DbUtils.resultSetToTableModel(rs));
+            } finally {
+                rs.close();
+                ps.close();
+                conn.close();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
         return null;
     }
 
     @Override
     public PropertyType getPropertyTypes(JComboBox comboBox) {
         String sql =
-                "SELECT *\n" +
+                "SELECT * " +
                 "FROM property_type";
 
         try (Connection conn = JDBCUtil.getConnection();
@@ -147,7 +238,7 @@ public class PropertyDaoImpl implements PropertyDao {
         return null;
     }
 
-    @Override
+    /*@Override
     public Property getPartnerProperty(Integer partnerId) {
         String sql =
                 "SELECT *\n" +
@@ -174,7 +265,7 @@ public class PropertyDaoImpl implements PropertyDao {
             System.out.println(ex.getMessage());
         }
         return null;
-    }
+    }*/
 
     @Override
     public boolean insertProperty(String pStars, String pName, String pDescription, String pRoad, String pDistrict, String pCity, String pZipCode, String pEmail, String pPhone, String pCheckIn, String pCheckOut, Integer userId, Integer propertyType) {
@@ -319,7 +410,7 @@ public class PropertyDaoImpl implements PropertyDao {
     }
 
     @Override
-    public boolean insertPropertyFacility(Integer propertyFacilityId,Integer propertyId) {
+    public boolean insertPropertyFacility(Integer propertyFacilityId,Integer propertyId) throws SQLException{
 
         String sql =
                 "INSERT INTO property_has_property_facility\n" +

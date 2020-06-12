@@ -5,6 +5,7 @@ import utils.JDBCUtil;
 
 import javax.swing.*;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,19 +13,16 @@ public class RoomDaoImpl implements RoomDao {
 
     @Override
     public void tableAllRooms(JTable table, Integer propertyId) {
+
         String sql =
                 "SELECT\n" +
-                "    rId AS 'ID',\n" +
-                "    rName AS 'Type',\n" +
-                "    rNumber AS 'Number',\n" +
-                "    rPrice AS 'Price',\n" +
-                "    rSize AS 'Size(m2)',\n" +
-                "    bCapacity AS 'Max Guests'\n" +
+                "    r.rId AS 'ID',\n" +
+                "    r.rName AS 'Type',\n" +
+                "    r.rNumber AS 'Number',\n" +
+                "    r.rPrice AS 'Price',\n" +
+                "    r.rSize AS 'Size(m2)'\n" +
                 "FROM\n" +
-                "    room\n" +
-                "LEFT JOIN bed ON\n" +
-                "    bed.roomId =\n" +
-                "    (SELECT COUNT(bCapacity))\n" +
+                "    room r\n" +
                 "WHERE propertyId = ?";
 
 
@@ -54,20 +52,18 @@ public class RoomDaoImpl implements RoomDao {
 
         String sql =
                 "SELECT\n" +
-                "    rId AS 'ID',\n" +
-                "    rName AS 'Type',\n" +
-                "    rPrice AS 'Price',\n" +
-                "    bCapacity AS 'Max Guests'\n" +
+                "    r.rId AS 'ID',\n" +
+                "    r.rName AS 'Type',\n" +
+                "    r.rPrice AS 'Price',\n" +
+                "    b.capacity AS 'Max Guests'\n" +
                 "FROM\n" +
-                "    room\n" +
-                "LEFT JOIN bed ON\n" +
-                "    bed.roomId =\n" +
-                "    (SELECT COUNT(bCapacity))\n" +
-                "WHERE propertyId = ?";
-
+                "    room r,\n" +
+                "(SELECT roomId, SUM(bCapacity) as capacity FROM bed group by roomId) as b\n" +
+                "WHERE r.rId = b.roomId AND r.propertyId = ?";
 
         try (Connection conn = JDBCUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
+
 
             ps.setInt(1, propertyId);
             ResultSet rs = ps.executeQuery();
@@ -146,43 +142,47 @@ public class RoomDaoImpl implements RoomDao {
 
     // Room DAO
     @Override
-    public void listPropertyRoomsSearch(Integer propertyId) {
-
-        List<Room> roomArrayList = new ArrayList<>();
+    public Room listAvailablePropertyRoomsSearch(JTable table, Integer propertyId, LocalDate checkIn, LocalDate checkOut) {
 
         String sql =
-                "SELECT\n" +
-                "   rName,\n" +
-                "   rPrice,\n" +
-                "   bCapacity\n" +
-                "FROM\n" +
-                "   room\n" +
-                "LEFT JOIN bed ON\n" +
-                "   bed.roomId =" +
-                "(SELECT COUNT(bCapacity))\n" +
-                "WHERE propertyId = ?";
+                "SELECT r.rid            AS 'ID',\n" +
+                "       r.rname          AS 'Room Type',\n" +
+                "       r.rprice         AS 'Price (THB)',\n" +
+                "       Sum(b.bcapacity) AS 'Max Guests'\n" +
+                "FROM   room r\n" +
+                "           LEFT JOIN bed b\n" +
+                "                     ON r.rid = b.roomid\n" +
+                "WHERE propertyId =? AND  NOT EXISTS (SELECT 1\n" +
+                "                   FROM   booking bo\n" +
+                "                   WHERE  bo.roomid = r.rid\n" +
+                "                     AND bo.bcheckin < ?\n" +
+                "                     AND bo.bcheckout >= ?)\n" +
+                "GROUP  BY roomid";
 
         try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)){
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
 
             ps.setInt(1, propertyId);
+            ps.setDate(2, Date.valueOf(checkOut));
+            ps.setDate(3, Date.valueOf(checkIn));
             ResultSet rs = ps.executeQuery();
 
-            Room room;
 
-            while(rs.next()) {
-                room = new Room(
-                        rs.getString("rName"),
-                        rs.getInt("rPrice"),
-                        rs.getInt("bCapacity")
-                );
+            try {
+                table.setModel(DbUtils.resultSetToTableModel(rs));
 
-                roomArrayList.add(room);
+            } finally {
+                rs.close();
+                ps.close();
+                conn.close();
             }
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+
+        return null;
     }
 
     @Override

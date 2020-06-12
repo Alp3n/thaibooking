@@ -49,3 +49,12 @@ FROM
         LEFT JOIN property_facility ON
             property_facility.pfId = property_has_property_facility.propertyFacilityId
 WHERE propertyId = ?;
+
+SELECT
+       pName AS 'Name',
+       pDistrict AS 'District',
+       pCity AS 'City'
+FROM property WHERE CONCAT(pName, pRoad, pDistrict, pCity)
+LIKE ?;
+
+SELECT pName AS 'Name', pDistrict AS 'District', pCity AS 'City' FROM property WHERE CONCAT(pName, pRoad, pDistrict, pCity) LIKE ?;

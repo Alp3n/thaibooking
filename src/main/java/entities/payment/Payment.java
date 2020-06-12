@@ -7,13 +7,15 @@ public class Payment {
     private Integer id;
     private String type;
     private String status;
+    private Integer total;
 
     public Payment() {
     }
 
-    public Payment(String type, String status) {
+    public Payment(String type, String status, Integer total) {
         this.type = type;
         this.status = status;
+        this.total = total;
     }
 
     public Integer getId() {
@@ -38,6 +40,14 @@ public class Payment {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
     @Override
