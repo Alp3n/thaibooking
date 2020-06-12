@@ -238,35 +238,6 @@ public class PropertyDaoImpl implements PropertyDao {
         return null;
     }
 
-    /*@Override
-    public Property getPartnerProperty(Integer partnerId) {
-        String sql =
-                "SELECT *\n" +
-                "FROM property\n" +
-                "WHERE userId = ?";
-
-        try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setInt(1, partnerId);
-            ResultSet rs = ps.executeQuery();
-
-            try {
-                while (rs.next()) {
-                    return extractPropertyFromResultSet(rs);
-                }
-            } finally {
-                rs.close();
-                ps.close();
-                conn.close();
-            }
-
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return null;
-    }*/
-
     @Override
     public boolean insertProperty(String pStars, String pName, String pDescription, String pRoad, String pDistrict, String pCity, String pZipCode, String pEmail, String pPhone, String pCheckIn, String pCheckOut, Integer userId, Integer propertyType) {
 

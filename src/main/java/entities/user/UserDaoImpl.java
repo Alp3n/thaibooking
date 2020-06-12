@@ -72,10 +72,8 @@ public class UserDaoImpl implements UserDao {
             user.setPhone(rs.getString("uPhone"));
             user.setType(rs.getString("uType"));
 
-
             return user;
         }
-
         return null;
     }
 

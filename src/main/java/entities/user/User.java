@@ -1,6 +1,6 @@
 package entities.user;
 
-public class User {
+public abstract class User {
 
     private Integer id;
     private String fName;
@@ -12,22 +12,6 @@ public class User {
     private String type;
 
     public User(){}
-
-    public User(String fName, String lName, String email, String phone, String password, String passport, String type) {
-        this.fName = fName;
-        this.lName = lName;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-        this.passport = passport;
-        this.type = type;
-    }
-
-    public User(String fName, String lName, String passport) {
-        this.fName = fName;
-        this.lName = lName;
-        this.passport = passport;
-    }
 
     public Integer getId() {
         return id;

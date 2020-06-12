@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1122" height="897"/>
+      <xy x="20" y="20" width="1122" height="3549"/>
     </constraints>
     <properties>
       <background color="-1"/>
@@ -248,7 +248,7 @@
                           <foreground color="-16777216"/>
                           <lineWrap value="true"/>
                           <rows value="12"/>
-                          <text value="It is simple! &#10;1. Check out all properties &#10;   in the tables and their rooms.&#10;2. Find whats intresting for you.&#10;3. Use search option, filling all the fields.&#10;4. Book button will show up :)"/>
+                          <text value="It is simple! &#10;1. Check out all properties &#10;   in the tables and their rooms.&#10;2. Find whats intresting for you.&#10;3. Use search option, filling all the fields.&#10;4. Available properties and its rooms&#10;   will show up.&#10;5. Select property and room.&#10;6. Book with button that showed up :)"/>
                         </properties>
                       </component>
                     </children>

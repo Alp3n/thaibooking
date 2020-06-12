@@ -32,7 +32,6 @@ public class MainFrame extends JFrame {
     private Integer selectedPropertyId = null;
     private Integer selectedRoomId = null;
     private Integer selectedPaymentId = null;
-    private Integer selectedTotalPrice = null;
     private LocalDate selectedCheckIn = null;
     private LocalDate selectedCheckOut = null;
     private boolean searchWasClicked = false;
@@ -357,7 +356,7 @@ public class MainFrame extends JFrame {
         bookRoomButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (userId == null) {
+                if (getUserId() == null) {
                     JOptionPane.showMessageDialog(null, "Login first to book a room.");
                 } else {
                     try {
@@ -674,37 +673,33 @@ public class MainFrame extends JFrame {
     }
 
     private void bookARoomAndPay(RoomDaoImpl roomDao, BookingDaoImpl bookingDao, PaymentDaoImpl paymentDao) {
-        // Setting some local variables from global ones
+        // Setting some scope variables from global ones
         LocalDate checkIn = getSelectedCheckIn();
         LocalDate checkOut = getSelectedCheckOut();
         Integer propertyId = getSelectedPropertyId();
         Integer roomId = getSelectedRoomId();
         Integer userId = getUserId();
+
         // bStatus is booking status for new booking which is always upcoming
         String bStatus = "Upcoming";
-
-
         // First we create payment to insert its ID to new booking
         // pStatus is a status of the payment and it depends on selection in combobox
         String pStatus;
         // paymentType depends on selection in combobox
         String paymentType = paymentMethodComboBox.getSelectedItem().toString();
-
+        // Calculating total price for the booking
         Integer stayDuration = (int) DAYS.between(checkIn, checkOut);
         int roomPrice = roomDao.getRoom(roomId).getPriceNight();
         Integer totalPrice = stayDuration * roomPrice;
         showTotalPriceLabel.setText(String.valueOf(totalPrice));
-
         if (paymentType.equalsIgnoreCase("Credit/Debit Card")) {
             pStatus = "Paid";
         } else {
             pStatus = "Pending";
         }
-
         // Insert method of payment returns its auto-generated ID so it can be used for inserting it in booking
         setSelectedPaymentId(paymentDao.insertPaymentToBooking(paymentType, pStatus, totalPrice));
         Integer paymentId = getSelectedPaymentId();
-
         // Inserting booking to the database with selected previously global variables
         bookingDao.createBooking(userId, roomId, propertyId, paymentId, checkIn, checkOut, bStatus);
         bookingDao.tableAllRegularBookings(rUpcomingBookingsTable, userId, "Upcoming");
@@ -731,6 +726,7 @@ public class MainFrame extends JFrame {
 
     /// LOGIN ///
     private void loginToTheSystem(CardPanelManager cpm, PropertyDaoImpl propertyDao, RoomDaoImpl roomDao, BedDaoImpl bedDao, BookingDaoImpl bookingDao, UserDaoImpl userDao) {
+
         LoginAuthentication la = new LoginAuthentication();
 
         String email = lEmailTextField.getText();
@@ -804,7 +800,6 @@ public class MainFrame extends JFrame {
     }
     /// CREATING PARTNER PROFILE ///
 
-    // TODO change getpartnerproperty and getpropertybyuserid
     private void createPartnerProfile(PropertyDaoImpl propertyDao, RoomDaoImpl roomDao, BookingDaoImpl bookingDao, Integer userId, Integer propertyId) {
 
         showNavButtonsPartner();
@@ -827,11 +822,9 @@ public class MainFrame extends JFrame {
             pPhoneTextField.setText(propertyDao.getPropertyByUserId(userId).getPhone());
             pCheckInComboBox.setSelectedItem(propertyDao.getPropertyByUserId(userId).getCheckInTime());
             pCheckOutComboBox.setSelectedItem(propertyDao.getPropertyByUserId(userId).getCheckOutTime());
-
             // MY ROOMS TAB //
             roomDao.getRoomFacility(prFacilityComboBox);
             roomDao.tableAllRooms(prRoomTable, propertyId);
-
             // MY BOOKINGS TAB //
             bookingDao.tableAllPartnerBookings(bUpcomingTable, propertyId, "Upcoming");
             bookingDao.tableAllPartnerBookings(bCheckedInTable, propertyId, "Checked In");

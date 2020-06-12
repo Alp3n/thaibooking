@@ -2,38 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c18d9147-2ea8-477f-b8a2-43199e2d300a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DATABASE/insertsScript.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/booking/BookingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/booking/BookingDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/booking/BookingDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/booking/BookingDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/booking/bookingQueries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/booking/bookingQueries.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/payment/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/payment/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/payment/PaymentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/payment/PaymentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/payment/PaymentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/payment/PaymentDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/property/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/property/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/property/PropertyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/property/PropertyDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/property/PropertyDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/property/PropertyDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/property/propertyQueries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/property/propertyQueries.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/room/RoomDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/room/RoomDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/room/RoomDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/room/RoomDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/room/roomQueries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/room/roomQueries.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/user/Guest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/user/Partner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/user/Partner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/user/Regular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/user/Regular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/user/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/user/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CardPanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/CardPanelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/PartnerPanel.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/PartnerPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/RegularPanel.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/RegularPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/LoginAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LoginAuthentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/booking/BookingDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/booking/BookingDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/booking/BookingDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/booking/BookingDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/payment/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/payment/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/payment/PaymentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/payment/PaymentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/payment/PaymentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/payment/PaymentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/property/PropertyDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/property/PropertyDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/dbproperties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/dbproperties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/property/PropertyDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/property/PropertyDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/room/RoomDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/room/RoomDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/room/RoomDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/room/RoomDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/user/Guest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/user/Partner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/user/Partner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/user/Regular.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/user/Regular.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/user/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/user/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/CardPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/CardPanelManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$11.class" afterDir="false" />
@@ -58,12 +44,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$29.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$29.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$30.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$30.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$31.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$32.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$33.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$34.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$35.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$36.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$6.class" afterDir="false" />
@@ -71,12 +51,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/PartnerPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/PartnerPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/RegularPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/RegularPanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/RegularPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/LoginAuthentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/LoginAuthentication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/App$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/App.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +102,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="SQL" />
         <option value="Class" />
+        <option value="SQL" />
       </list>
     </option>
   </component>
@@ -162,7 +138,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/entities" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/entities/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -289,6 +265,9 @@
       <workItem from="1591694218219" duration="4574000" />
       <workItem from="1591765119153" duration="13283000" />
       <workItem from="1591858697558" duration="9029000" />
+      <workItem from="1591920340408" duration="126000" />
+      <workItem from="1591927588099" duration="11066000" />
+      <workItem from="1591962960866" duration="4522000" />
     </task>
     <task id="LOCAL-00001" summary="Another update&#10;Today I made first screen UI and some fetching to the tables and lists.&#10;Also implemented DAO pattern for JAVA classes.">
       <created>1591092503025</created>
@@ -318,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591300159978</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Another update">
+      <created>1591920366106</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591920366106</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +313,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Another update&#10;Today I made first screen UI and some fetching to the tables and lists.&#10;Also implemented DAO pattern for JAVA classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Another update&#10;Today I made first screen UI and some fetching to the tables and lists.&#10;Also implemented DAO pattern for JAVA classes." />
+    <MESSAGE value="Another update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Another update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Assign_Data_Sources" timestamp="1590380903081">
@@ -346,10 +333,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591182950031" />
-    <state x="573" y="281" width="816" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591776488592">
+    <state x="573" y="281" width="816" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591969947454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="573" y="281" width="816" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591776488592" />
+    <state x="573" y="281" width="816" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591969947454" />
     <state x="694" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590400303526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -399,58 +386,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="376" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591694356229" />
-    <state x="534" y="111" key="CommitChangelistDialog2" timestamp="1591920364902">
+    <state x="534" y="111" key="CommitChangelistDialog2" timestamp="1591971268197">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="534" y="111" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591920364902" />
+    <state x="534" y="111" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591971268197" />
     <state x="758" y="222" key="ExecutionTargetDialog" timestamp="1591319111760">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="758" y="222" key="ExecutionTargetDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591319111760" />
-    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1591079560068">
+    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1591970994975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591079560068" />
-    <state width="1877" height="377" key="GridCell.Tab.0.bottom" timestamp="1591868084669">
+    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970994975" />
+    <state width="1877" height="181" key="GridCell.Tab.0.bottom" timestamp="1591970884787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1590368860643" />
-    <state width="1877" height="377" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084669" />
+    <state width="1877" height="181" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970884787" />
     <state width="1848" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591669457052" />
-    <state width="1877" height="377" key="GridCell.Tab.0.center" timestamp="1591868084669">
+    <state width="1877" height="181" key="GridCell.Tab.0.center" timestamp="1591970884787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1590368860643" />
-    <state width="1877" height="377" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084669" />
+    <state width="1877" height="181" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970884787" />
     <state width="1848" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591669457052" />
-    <state width="1877" height="377" key="GridCell.Tab.0.left" timestamp="1591868084669">
+    <state width="1877" height="181" key="GridCell.Tab.0.left" timestamp="1591970884787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1590368860642" />
-    <state width="1877" height="377" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084669" />
+    <state width="1877" height="181" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970884787" />
     <state width="1848" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591669457052" />
-    <state width="1877" height="377" key="GridCell.Tab.0.right" timestamp="1591868084669">
+    <state width="1877" height="181" key="GridCell.Tab.0.right" timestamp="1591970884787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1590368860643" />
-    <state width="1877" height="377" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084669" />
+    <state width="1877" height="181" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970884787" />
     <state width="1848" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591669457052" />
-    <state width="1877" height="377" key="GridCell.Tab.1.bottom" timestamp="1591868084670">
+    <state width="1877" height="377" key="GridCell.Tab.1.bottom" timestamp="1591970148029">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="377" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084670" />
-    <state width="1877" height="377" key="GridCell.Tab.1.center" timestamp="1591868084669">
+    <state width="1877" height="377" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970148029" />
+    <state width="1877" height="377" key="GridCell.Tab.1.center" timestamp="1591970148028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="377" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084669" />
-    <state width="1877" height="377" key="GridCell.Tab.1.left" timestamp="1591868084669">
+    <state width="1877" height="377" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970148028" />
+    <state width="1877" height="377" key="GridCell.Tab.1.left" timestamp="1591970148028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="377" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084669" />
-    <state width="1877" height="377" key="GridCell.Tab.1.right" timestamp="1591868084669">
+    <state width="1877" height="377" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970148028" />
+    <state width="1877" height="377" key="GridCell.Tab.1.right" timestamp="1591970148028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="377" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591868084669" />
+    <state width="1877" height="377" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970148028" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1590904942189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -500,28 +487,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="349" y="205" width="1188" height="717" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591595875574" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591920341200">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591963257512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591920341200" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591963257512" />
     <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591668449953" />
     <state x="482" y="180" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590382588404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="482" y="180" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590382588404" />
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591920385309">
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591971262774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591920385309" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591971262774" />
     <state x="2689" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591610701799" />
-    <state x="2650" y="401" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1591867849829">
+    <state x="2650" y="401" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1591935597623">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2650" y="401" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591867849829" />
-    <state x="1681" y="-19" width="1573" height="717" maximized="true" key="dock-window-1" timestamp="1591920346715">
+    <state x="2650" y="401" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591935597623" />
+    <state x="2030" y="-13" width="1255" height="1027" maximized="true" key="dock-window-1" timestamp="1591971240993">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1681" y="-19" width="1573" height="717" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591920346715" />
+    <state x="2030" y="-13" width="1255" height="1027" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591971240993" />
     <state x="2197" y="-22" width="1419" height="818" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591668440479" />
     <state x="619" y="422" width="540" height="496" key="extract.method.dialog" timestamp="1591861282044">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -535,10 +522,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591287354678" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591698950277">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591970123306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591698950277" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591970123306" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/thaibooking$App.ic" NAME="App Coverage Results" MODIFIED="1591863720301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
