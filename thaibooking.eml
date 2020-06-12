@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_13" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<levels>
+		<level name="Maven: mysql:mysql-connector-java:8.0.20" value="project"/>
+		<level name="Maven: com.google.protobuf:protobuf-java:3.6.1" value="project"/>
+		<level name="Maven: com.toedter:jcalendar:1.4" value="project"/>
+		<level name="Maven: com.jgoodies:forms:1.2.1" value="project"/>
+		<level name="Maven: org.swinglabs:swingx:1.6.1" value="project"/>
+		<level name="Maven: com.jhlabs:filters:2.0.235" value="project"/>
+		<level name="Maven: org.swinglabs:swing-worker:1.1" value="project"/>
+		<level name="Maven: joda-time:joda-time:2.10.6" value="project"/>
+		<level name="Maven: net.proteanit.sql:rs2xml:1.0" value="project"/>
+	</levels>
+</component>

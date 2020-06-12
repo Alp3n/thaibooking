@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: com.google.protobuf:protobuf-java:3.6.1">
+    <archive path="C:/Users/Desktop/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar" />
+  </library>
+  <library name="Maven: com.jgoodies:forms:1.2.1">
+    <archive path="C:/Users/Desktop/.m2/repository/com/jgoodies/forms/1.2.1/forms-1.2.1.jar" />
+  </library>
+  <library name="Maven: com.jhlabs:filters:2.0.235">
+    <archive path="C:/Users/Desktop/.m2/repository/com/jhlabs/filters/2.0.235/filters-2.0.235.jar" />
+  </library>
+  <library name="Maven: com.toedter:jcalendar:1.4">
+    <archive path="C:/Users/Desktop/.m2/repository/com/toedter/jcalendar/1.4/jcalendar-1.4.jar" />
+  </library>
+  <library name="Maven: joda-time:joda-time:2.10.6">
+    <archive path="C:/Users/Desktop/.m2/repository/joda-time/joda-time/2.10.6/joda-time-2.10.6.jar" />
+  </library>
+  <library name="Maven: mysql:mysql-connector-java:8.0.20">
+    <archive path="C:/Users/Desktop/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar" />
+  </library>
+  <library name="Maven: net.proteanit.sql:rs2xml:1.0">
+    <archive path="C:/Users/Desktop/.m2/repository/net/proteanit/sql/rs2xml/1.0/rs2xml-1.0.jar" />
+  </library>
+  <library name="Maven: org.swinglabs:swing-worker:1.1">
+    <archive path="C:/Users/Desktop/.m2/repository/org/swinglabs/swing-worker/1.1/swing-worker-1.1.jar" />
+  </library>
+  <library name="Maven: org.swinglabs:swingx:1.6.1">
+    <archive path="C:/Users/Desktop/.m2/repository/org/swinglabs/swingx/1.6.1/swingx-1.6.1.jar" />
+  </library>
+</eclipse-userlibraries>
+
