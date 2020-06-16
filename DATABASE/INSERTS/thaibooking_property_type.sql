@@ -1,0 +1,1 @@
+INSERT INTO thaibooking.property_type (ptId, ptName) VALUES (1, 'Hotel');

@@ -1,0 +1,10 @@
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (1, 'Air-Condition');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (2, 'TV');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (3, 'Safe');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (4, 'Refrigirator');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (5, 'Hairdryer');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (6, 'Towels');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (7, 'WiFi');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (8, 'Balcony');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (9, 'Electric Kettle');
+INSERT INTO thaibooking.room_facility (rfId, rfName) VALUES (10, 'Private bathroomm');

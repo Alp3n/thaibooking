@@ -1,0 +1,40 @@
+Instruction how to run the application.
+
+We know that Ajarn uses Eclips and we tried to export it to this IDE but there were some problems
+ with our external library (DBUtils) and we did not know how to fix it.
+We used Intellij IDE and everything will work if followed
+
+1. Setup database in MySQL with DBscript.sql and insertScrpit.sql from DATABASE folder.
+2. Open project with Intellij
+3. Got to pom.xml and download Maven dependencies
+4. Install manually rs2xml.jar by inputing this in console.
+	Please make sure you have Maven in environment variable in Windows
+
+mvn install:install-file -Dfile=C:\rs2xml.jar -DgroupId=net.proteanit.sql
+    -DartifactId=rs2xml -Dversion=1.0 -Dpackaging=jar
+	
+	!!!Replace the path C:\rs2xml.jar with the actual location on your computer which is in thaibooking\JARs\rs2xml.jar!!!
+	
+5. Change MySQL database parameters in thaibooking\src\main\java\utils\dbproperties file for the one of own MySQL server
+6. Run the application :)
+
+Ajarn, please if you encounter any problem write to me 1808090001@students.stamford.edu
+Adam Walukiewicz, I can stream application for you any time, or help with setup.
+
+Sorry for the inconvinience
+
+Our application has some predefined data.
+
+You can check the search function for "Bangkok" or "Hua hin".
+Also we added 2 bookings so rooms wont be available if you serach withing check-in: 2020-06-23, check-out:2020-06-25
+
+Partner user accounts:
+bangkok@hotel.th
+huahin@hotel.th
+
+Regular user account:
+regular@user.th
+
+Password for all is the same:
+123456
+

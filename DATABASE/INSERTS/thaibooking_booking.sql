@@ -1,0 +1,2 @@
+INSERT INTO thaibooking.booking (bId, bCheckIn, bCheckOut, bStatus, userId, roomId, roomPropertyId, paymentId) VALUES (19, '2020-06-23', '2020-06-25', 'Upcoming', 16, 15, 6, 11);
+INSERT INTO thaibooking.booking (bId, bCheckIn, bCheckOut, bStatus, userId, roomId, roomPropertyId, paymentId) VALUES (20, '2020-06-23', '2020-06-25', 'Upcoming', 16, 18, 7, 12);

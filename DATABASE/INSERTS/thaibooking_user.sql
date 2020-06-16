@@ -1,0 +1,3 @@
+INSERT INTO thaibooking.user (uId, uFirstName, uLastName, uPassport, uEmail, uPhone, uPassword, uType) VALUES (14, 'Bangkok', 'Hotel', 'BK123456', 'bangkok@hotel.th', '0123456789', '123456', 'Partner');
+INSERT INTO thaibooking.user (uId, uFirstName, uLastName, uPassport, uEmail, uPhone, uPassword, uType) VALUES (15, 'Hua Hin', 'Hotel', 'HH999999', 'huahin@hotel.th', '0987654321', '123456', 'Partner');
+INSERT INTO thaibooking.user (uId, uFirstName, uLastName, uPassport, uEmail, uPhone, uPassword, uType) VALUES (16, 'regular', 'user', 'RU12365432', 'regular@user.th', '09871234765', '123456', 'Regular');
